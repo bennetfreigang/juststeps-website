@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — JustSteps</title>
+  <meta name="description" content="Get help with JustSteps. Find answers to common questions, troubleshooting tips, and contact support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:  #080808;
+      --white:  #f5f3ef;
+      --dim:    #a09c94;
+      --accent: #e8e0d0;
+      --card:   #111110;
+      --border: rgba(255,255,255,0.07);
+      --green:  #6ee38a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 48px;
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px; text-decoration: none; color: var(--white);
+    }
+    .nav-icon {
+      width: 36px; height: 36px; background: var(--white);
+      border-radius: 9px; display: flex; align-items: center; justify-content: center;
+    }
+    .nav-icon svg { width: 18px; height: 18px; }
+    nav ul { list-style: none; display: flex; gap: 36px; }
+    nav ul a {
+      text-decoration: none; color: var(--dim);
+      font-size: 15px; transition: color 0.2s;
+    }
+    nav ul a:hover, nav ul a.active { color: var(--white); }
+    .nav-back {
+      color: var(--dim); font-size: 14px; text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--white); }
+
+    /* ── HERO ── */
+    .support-hero {
+      padding: 160px 48px 80px;
+      max-width: 900px; margin: 0 auto;
+      text-align: center;
+    }
+    .support-hero .tag {
+      display: inline-block;
+      background: rgba(110,227,138,0.1);
+      border: 1px solid rgba(110,227,138,0.2);
+      color: var(--green);
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 13px; font-weight: 500;
+      margin-bottom: 32px;
+    }
+    .support-hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(40px, 6vw, 72px);
+      letter-spacing: -2px; line-height: 1.06;
+    }
+    .support-hero h1 em { font-style: italic; color: var(--dim); }
+    .support-hero p {
+      margin-top: 20px; font-size: 18px; color: var(--dim);
+      font-weight: 300; max-width: 500px; margin: 20px auto 0;
+    }
+
+    /* ── SEARCH-LIKE CONTACT BAR ── */
+    .contact-bar {
+      max-width: 640px; margin: 52px auto 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 24px;
+    }
+    .contact-bar-icon { font-size: 20px; }
+    .contact-bar p {
+      flex: 1; font-size: 15px; color: var(--dim); font-weight: 300;
+    }
+    .contact-bar a {
+      background: var(--white); color: var(--black);
+      padding: 9px 20px; border-radius: 100px;
+      font-size: 14px; font-weight: 500; text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .contact-bar a:hover { opacity: 0.85; }
+
+    /* ── LAYOUT ── */
+    .support-body {
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px 48px 120px;
+      display: grid; grid-template-columns: 240px 1fr; gap: 64px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky; top: 100px;
+    }
+    .sidebar-label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(160,156,148,0.5);
+      margin-bottom: 12px;
+    }
+    .sidebar ul { list-style: none; }
+    .sidebar ul li { margin-bottom: 2px; }
+    .sidebar ul a {
+      display: block; padding: 9px 14px; border-radius: 10px;
+      font-size: 14px; color: var(--dim); text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .sidebar ul a:hover, .sidebar ul a.active {
+      background: rgba(232,224,208,0.07); color: var(--white);
+    }
+    .sidebar-divider {
+      height: 1px; background: var(--border);
+      margin: 20px 0;
+    }
+
+    /* ── CONTENT ── */
+    .support-content section {
+      margin-bottom: 80px;
+    }
+    .support-content section:last-child { margin-bottom: 0; }
+
+    .content-label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--dim);
+      margin-bottom: 12px;
+    }
+    .content-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 34px; letter-spacing: -1px;
+      margin-bottom: 36px;
+    }
+
+    /* ── FAQ ACCORDION ── */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-of-type { border-top: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none;
+      color: var(--white); cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; padding: 20px 0;
+      font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 400;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-icon {
+      font-size: 20px; color: var(--dim);
+      transition: transform 0.3s;
+      flex-shrink: 0; line-height: 1;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.2s;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+    .faq-a p {
+      font-size: 15px; color: var(--dim); font-weight: 300; line-height: 1.7;
+    }
+    .faq-a p + p { margin-top: 12px; }
+    .faq-a a { color: var(--accent); }
+
+    /* ── STEP CARDS (troubleshooting) ── */
+    .steps-list { display: flex; flex-direction: column; gap: 16px; }
+    .step-card {
+      display: flex; align-items: flex-start; gap: 20px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .step-card:hover { border-color: rgba(232,224,208,0.15); }
+    .step-num {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(232,224,208,0.07);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 18px;
+      color: var(--accent);
+    }
+    .step-card h4 {
+      font-size: 15px; font-weight: 500; margin-bottom: 6px;
+    }
+    .step-card p { font-size: 14px; color: var(--dim); font-weight: 300; line-height: 1.6; }
+    .step-card code {
+      display: inline-block; margin-top: 8px;
+      background: rgba(232,224,208,0.07); border-radius: 6px;
+      padding: 4px 10px; font-size: 13px; color: var(--accent);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* ── INFO CARDS ── */
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .info-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+    }
+    .info-card .ic-icon { font-size: 28px; margin-bottom: 16px; }
+    .info-card h4 {
+      font-size: 16px; font-weight: 500; margin-bottom: 8px;
+    }
+    .info-card p { font-size: 14px; color: var(--dim); font-weight: 300; line-height: 1.65; }
+
+    /* ── PRIVACY POLICY ── */
+    .prose h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px; letter-spacing: -0.4px;
+      margin: 36px 0 12px;
+    }
+    .prose h3:first-child { margin-top: 0; }
+    .prose p {
+      font-size: 15px; color: var(--dim); font-weight: 300;
+      line-height: 1.75; margin-bottom: 16px;
+    }
+    .prose ul {
+      margin: 0 0 16px 20px;
+    }
+    .prose ul li {
+      font-size: 15px; color: var(--dim); font-weight: 300;
+      line-height: 1.7; margin-bottom: 6px;
+    }
+    .prose .updated {
+      display: inline-block;
+      background: rgba(232,224,208,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px; padding: 6px 14px;
+      font-size: 13px; color: var(--dim);
+      margin-bottom: 28px;
+    }
+
+    /* ── CONTACT SECTION ── */
+    .contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px 28px;
+      text-decoration: none; color: var(--white);
+      transition: border-color 0.2s, background 0.2s;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .contact-card:hover { border-color: rgba(232,224,208,0.2); background: #161614; }
+    .contact-card .cc-icon { font-size: 28px; }
+    .contact-card h4 { font-size: 16px; font-weight: 500; }
+    .contact-card p { font-size: 14px; color: var(--dim); font-weight: 300; line-height: 1.5; }
+    .contact-card .cc-link {
+      font-size: 14px; color: var(--accent);
+      margin-top: 4px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 17px; color: var(--dim);
+    }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a {
+      font-size: 13px; color: var(--dim); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 13px; color: rgba(160,156,148,0.4); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      nav ul { display: none; }
+      .support-hero { padding: 130px 24px 60px; }
+      .contact-bar { flex-direction: column; border-radius: 20px; text-align: center; }
+      .support-body { grid-template-columns: 1fr; padding: 40px 24px 80px; gap: 40px; }
+      .sidebar { position: static; }
+      .info-grid, .contact-cards { grid-template-columns: 1fr; }
+      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="nav-icon">
+        <svg viewBox="0 0 877 1418" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M108.315 1394.53L303.628 1161.62C323.159 1139.16 325.601 1133.79 332.925 1109.86L350.015 1058.59L246.011 928.711L212.808 1082.03L19.4487 1311.04C-42.0747 1383.3 57.5347 1454.59 108.315 1394.53ZM585.855 1375.49C625.405 1456.05 744.546 1406.74 701.089 1319.34L568.276 1049.8C558.511 1029.79 544.351 1008.3 531.655 990.723L447.183 870.605L453.042 852.539C475.991 785.645 484.292 744.629 488.687 678.223L502.358 490.234C508.706 399.902 455.483 333.008 364.663 333.008C296.792 333.008 250.405 368.164 186.929 429.688L87.8081 527.832C55.5816 559.57 44.3511 585.449 41.4214 627.441L29.7027 781.738C26.773 819.824 47.7691 847.168 83.4136 848.145C119.546 850.586 141.03 829.59 144.448 788.574L159.097 619.629L206.948 576.66C224.526 560.547 248.94 570.801 246.987 589.355L236.245 732.422C230.386 804.199 247.476 838.379 297.28 900.391L429.116 1065.43C442.3 1082.52 443.765 1088.87 449.136 1099.61L585.855 1375.49ZM811.44 587.891H661.05L560.464 476.562L550.698 632.812L593.667 675.781C615.151 697.266 632.73 703.613 671.305 703.613H811.44C850.503 703.613 876.383 681.152 876.383 645.508C876.383 610.352 850.015 587.891 811.44 587.891ZM436.929 273.926C513.101 273.926 574.136 212.891 574.136 136.719C574.136 61.0352 513.101 0 436.929 0C361.245 0 299.722 61.0352 299.722 136.719C299.722 212.891 361.245 273.926 436.929 273.926Z" fill="#080808"/>
+        </svg>
+      </span>
+      JustSteps
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="support-hero">
+    <div class="tag">Support Center</div>
+    <h1>We're here <em>to help.</em></h1>
+    <p>Find answers to common questions, troubleshooting tips, and a direct line to reach us.</p>
+    <div class="contact-bar">
+      <span class="contact-bar-icon">✉️</span>
+      <p>Can't find what you're looking for? Send us a message.</p>
+      <a href="mailto:support@juststeps.app">Email Support</a>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="support-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-label">On this page</div>
+      <ul>
+        <li><a href="#faq" class="active">Frequently asked</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#about">About the app</a></li>
+        <li><a href="#privacy">Privacy Policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-label">App version</div>
+      <ul>
+        <li><a href="#" style="cursor: default;">JustSteps 2.0.4</a></li>
+        <li><a href="https://apps.apple.com/app/juststeps" target="_blank">View on App Store ↗</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="support-content">
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="content-label">Common questions</div>
+        <h2 class="content-title">Frequently asked</h2>
+
+        <div class="faq-item open">
+          <button class="faq-q">
+            Why isn't JustSteps counting my steps?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>JustSteps uses your iPhone's motion coprocessor (CoreMotion) to count steps. This requires permission to access Motion &amp; Fitness data.</p>
+            <p>Go to <strong>Settings → Privacy &amp; Security → Motion &amp; Fitness</strong> and make sure JustSteps is enabled. If the toggle isn't there, open JustSteps and accept the permission prompt that appears.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Do I need an Apple Watch for the app to work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>No. JustSteps works entirely on your iPhone using the built-in motion sensor. An Apple Watch is fully supported and will sync your step count, but it's completely optional.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Why did I not get a notification when I hit my goal?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Goal notifications require two things: Motion &amp; Fitness permission (to count steps in the background) and Notification permission (to send the alert).</p>
+            <p>Check both in <strong>Settings → Privacy &amp; Security → Motion &amp; Fitness</strong> and <strong>Settings → Notifications → JustSteps</strong>. Also make sure Low Power Mode is off, as it can delay background activity.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            My step count doesn't match the Health app. Why?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>JustSteps uses CoreMotion directly for today's steps, while the Health app may aggregate data from multiple sources (Apple Watch, third-party apps, etc.). Small differences are normal.</p>
+            <p>For history beyond today, JustSteps reads from HealthKit, so past days should match. If your Watch data isn't showing, make sure HealthKit access is enabled in <strong>Settings → Health → Data Access &amp; Devices → JustSteps</strong>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can I set multiple daily reminders?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes! Open the app, tap the gear icon to open Settings, then enable Daily Reminders. You can tap <strong>Add Reminder</strong> to add as many times as you like. Each reminder only fires if you haven't reached your goal yet.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How do I add a widget to my Home Screen or Lock Screen?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Long-press your Home Screen → tap the + in the top left → search for <strong>JustSteps</strong> → choose a widget size and tap Add Widget.</p>
+            <p>For the Lock Screen, swipe to your Lock Screen, long-press, tap Customize → Lock Screen, then tap the widget area below the clock.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Does JustSteps work on iPad?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>JustSteps is designed for iPhone and Apple Watch. Most iPads do not have the motion coprocessor needed for accurate step counting, so the app is not optimised for iPad use.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Does the app drain my battery?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>JustSteps is built to be as battery-efficient as possible. Step counting via CoreMotion uses the dedicated motion coprocessor — a low-power chip that runs even when the main CPU is idle. The impact on battery life is minimal.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TROUBLESHOOTING -->
+      <section id="troubleshooting">
+        <div class="content-label">Fix common issues</div>
+        <h2 class="content-title">Troubleshooting</h2>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <div>
+              <h4>Check Motion &amp; Fitness permission</h4>
+              <p>This is the most common cause of step counting issues. Without it, CoreMotion cannot read the pedometer.</p>
+              <code>Settings → Privacy &amp; Security → Motion &amp; Fitness → JustSteps ✓</code>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <div>
+              <h4>Check notification permission</h4>
+              <p>Required for goal-reached alerts and daily reminders.</p>
+              <code>Settings → Notifications → JustSteps → Allow Notifications ✓</code>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <div>
+              <h4>Check HealthKit access (for history)</h4>
+              <p>If step history is missing or not syncing with Apple Watch data, verify Health access is granted.</p>
+              <code>Settings → Health → Data Access &amp; Devices → JustSteps</code>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <div>
+              <h4>Disable Low Power Mode</h4>
+              <p>iOS significantly restricts background activity in Low Power Mode. This can delay or prevent background step updates and notifications.</p>
+              <code>Settings → Battery → Low Power Mode → Off</code>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">5</div>
+            <div>
+              <h4>Force quit and reopen</h4>
+              <p>Swipe up from the bottom (or double-tap the Home button), swipe up on JustSteps to force quit it, then reopen. This refreshes the live update connection.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">6</div>
+            <div>
+              <h4>Restart your iPhone</h4>
+              <p>A full restart often resolves persistent CoreMotion or HealthKit sync issues. Hold the side button + volume down, slide to power off, then power back on.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="content-label">How it works</div>
+        <h2 class="content-title">About the app</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="ic-icon">📱</div>
+            <h4>iPhone (today)</h4>
+            <p>Today's step count is read directly from CoreMotion — your iPhone's motion coprocessor. This runs independently of HealthKit and doesn't require the Health app.</p>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon">❤️</div>
+            <h4>HealthKit (history)</h4>
+            <p>Past days are fetched from HealthKit, which aggregates data from all your devices including Apple Watch. HealthKit is always the source of truth for historical data.</p>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon">⌚</div>
+            <h4>Apple Watch</h4>
+            <p>Step count syncs from iPhone to Watch in real time using WatchConnectivity. Watch complications update automatically throughout the day.</p>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon">🔔</div>
+            <h4>Notifications</h4>
+            <p>Background delivery via HKObserverQuery wakes the app when HealthKit receives new step data. The goal notification fires the moment you cross the threshold — even with the app closed.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRIVACY POLICY -->
+      <section id="privacy">
+        <div class="content-label">Legal</div>
+        <h2 class="content-title">Privacy Policy</h2>
+        <div class="prose">
+          <span class="updated">Last updated: April 2026</span>
+
+          <h3>Overview</h3>
+          <p>JustSteps ("the app") is designed with privacy as a core principle. We do not collect, transmit, or sell any personal data. All information stays on your device and in your personal iCloud account via Apple's HealthKit and SwiftData frameworks.</p>
+
+          <h3>Data we do not collect</h3>
+          <ul>
+            <li>No account or registration is required</li>
+            <li>No personal information is collected or stored on external servers</li>
+            <li>No analytics or usage tracking SDKs are used</li>
+            <li>No crash reporting SDKs that transmit data externally</li>
+            <li>No advertising networks or tracking pixels</li>
+          </ul>
+
+          <h3>Data stored on your device</h3>
+          <p>JustSteps stores step counts and walking distance locally using SwiftData. This data never leaves your device unless you explicitly back up your iPhone to iCloud, in which case it is covered by Apple's iCloud privacy practices.</p>
+          <p>Step data is also read from and written to Apple HealthKit. Your HealthKit data is governed by Apple's Health privacy policy. JustSteps only reads step count and walking distance; it does not write any data to HealthKit except to update today's step count for widget display purposes.</p>
+
+          <h3>HealthKit</h3>
+          <p>JustSteps requests read access to Step Count and Walking + Running Distance from HealthKit. This data is used solely within the app to display your step count, distance, and history. It is not shared with any third party.</p>
+
+          <h3>Motion &amp; Fitness</h3>
+          <p>JustSteps uses CoreMotion to count steps directly from your iPhone's motion sensor. This requires Motion &amp; Fitness permission. The data is processed locally and not transmitted anywhere.</p>
+
+          <h3>Notifications</h3>
+          <p>JustSteps sends local push notifications for goal completion and daily reminders. These are generated entirely on-device and do not involve any external servers.</p>
+
+          <h3>Children's privacy</h3>
+          <p>JustSteps is suitable for all ages and does not knowingly collect personal data from children or any other users.</p>
+
+          <h3>Changes to this policy</h3>
+          <p>If we ever change our privacy practices, this page will be updated and the "Last updated" date will change. We will never introduce data collection without explicit user consent.</p>
+
+          <h3>Contact</h3>
+          <p>Questions about this privacy policy? Email us at <a href="mailto:privacy@juststeps.app" style="color: var(--accent);">privacy@juststeps.app</a>.</p>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="content-label">Get in touch</div>
+        <h2 class="content-title">Contact us</h2>
+        <div class="contact-cards">
+          <a href="mailto:support@juststeps.app" class="contact-card">
+            <div class="cc-icon">✉️</div>
+            <h4>Email support</h4>
+            <p>For bug reports, questions, or anything else. We typically respond within 48 hours.</p>
+            <div class="cc-link">support@juststeps.app →</div>
+          </a>
+          <a href="https://apps.apple.com/app/juststeps" target="_blank" class="contact-card">
+            <div class="cc-icon">⭐</div>
+            <h4>Leave a review</h4>
+            <p>Enjoying JustSteps? A review on the App Store helps others discover the app and means a lot to us.</p>
+            <div class="cc-link">Write a review →</div>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">JustSteps</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="#faq">FAQ</a>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="mailto:support@juststeps.app">Contact</a>
+    </div>
+    <span class="footer-copy">© 2026 JustSteps. All rights reserved.</span>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Active sidebar link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const sideLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          sideLinks.forEach(a => a.classList.remove('active'));
+          const link = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
