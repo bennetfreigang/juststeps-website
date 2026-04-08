@@ -49,10 +49,6 @@ To use a custom domain like `juststeps.app`:
 
 3. In GitHub Pages settings, enter your custom domain and enable **Enforce HTTPS**
 
-## Updating contact emails
-
-Replace `support@juststeps.app` and `privacy@juststeps.app` in both HTML files with your actual email address before publishing.
-
 ## Updating the App Store link
 
 Replace `https://apps.apple.com/app/juststeps` with your actual App Store URL once the app is live.
