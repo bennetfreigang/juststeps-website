@@ -2,12 +2,22 @@
 
 GitHub Pages site for the JustSteps iOS app.
 
-## Pages
+## Project Structure
 
-| URL | File | Description |
-|-----|------|-------------|
-| `/` | `index.html` | Marketing / Landing page |
-| `/support` | `support.html` | Support, FAQ, Privacy Policy |
+```
+/
+├── assets/
+│   ├── css/
+│   │   ├── main.css      # Common styles, variables, reset
+│   │   ├── index.css     # Home page specific styles
+│   │   └── support.css   # Support page specific styles
+│   └── js/
+│       ├── main.js       # Common scripts (Scroll Reveal)
+│       └── support.js    # Support page specific scripts (FAQ, Sidebar)
+├── index.html            # Marketing / Landing page
+├── support.html          # Support, FAQ, Privacy Policy
+└── README.md             # Project documentation
+```
 
 ## Setup
 
