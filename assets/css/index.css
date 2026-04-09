@@ -123,103 +123,65 @@ h1 em {
 
 /* ── PHONE MOCKUP ── */
 .hero-phone {
-  margin-top: 80px;
+  margin-top: 72px;
   position: relative;
   animation: fadeUp 0.9s 0.4s ease both;
 }
 
+/* iPhone 15 Pro silhouette */
 .phone-frame {
-  width: 280px;
-  background: #161614;
-  border: 1.5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 44px;
-  padding: 16px;
+  width: 300px;
+  background: #0f0f0e;
+  border: 1.5px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50px;
+  padding: 14px;
   box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 40px 80px rgba(0, 0, 0, 0.7),
-    0 0 60px rgba(232, 224, 208, 0.04);
+    0 0 0 1px rgba(0,0,0,0.7),
+    0 50px 100px rgba(0,0,0,0.8),
+    0 0 80px rgba(232,224,208,0.03),
+    inset 0 1px 0 rgba(255,255,255,0.06);
   position: relative;
 }
 
-.phone-notch {
-  width: 90px;
-  height: 28px;
-  background: #0a0a0a;
+/* Dynamic Island */
+.phone-island {
+  width: 88px;
+  height: 30px;
+  background: #000;
   border-radius: 20px;
-  margin: 0 auto 16px;
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
 .phone-screen {
   background: #080808;
-  border-radius: 28px;
-  padding: 28px 20px 32px;
-  text-align: center;
-}
-
-.phone-steps {
-  font-family: 'DM Serif Display', serif;
-  font-size: 64px;
-  letter-spacing: -3px;
-  color: var(--white);
-  line-height: 1;
-}
-
-.phone-label {
-  font-size: 13px;
-  color: var(--dim);
-  margin-top: 4px;
-  letter-spacing: 0.02em;
-}
-
-.phone-distance {
-  font-size: 14px;
-  color: var(--dim);
-  margin-top: 10px;
-  font-feature-settings: 'tnum';
-}
-
-.phone-progress-wrap {
-  margin-top: 40px;
-}
-
-.phone-progress-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: var(--dim);
-  margin-bottom: 8px;
-}
-
-.phone-bar {
-  height: 3px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
+  border-radius: 38px;
   overflow: hidden;
+  position: relative;
+  aspect-ratio: 1290 / 2796;
 }
 
-.phone-bar-fill {
+.phone-screenshot {
+  width: 100%;
   height: 100%;
-  width: 72%;
-  background: var(--white);
+  display: block;
+  object-fit: cover;
+}
+
+/* Home indicator */
+.phone-home-indicator {
+  width: 120px;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
   border-radius: 2px;
-  animation: barGrow 1.2s 1s ease both;
-}
-
-.phone-remaining {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
-  font-size: 11px;
-  color: rgba(160, 156, 148, 0.6);
-}
-
-@keyframes barGrow {
-  from {
-    width: 0;
-  }
-  to {
-    width: 72%;
-  }
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
 /* ── FEATURES ── */
@@ -298,11 +260,11 @@ h1 em {
   font-weight: 300;
 }
 
-/* ── STATS STRIP ── */
+/* ── HIGHLIGHTS STRIP ── */
 .stats-strip {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 64px 48px;
+  padding: 56px 48px;
 }
 
 .stats-inner {
@@ -310,22 +272,48 @@ h1 em {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  text-align: center;
-  gap: 40px;
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.stat-item {
+  background: var(--card);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background 0.2s;
+}
+
+.stat-item:hover { background: #161614; }
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(232,224,208,0.07);
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
 }
 
 .stat-number {
   font-family: 'DM Serif Display', serif;
-  font-size: 52px;
-  letter-spacing: -2px;
+  font-size: 36px;
+  letter-spacing: -1.5px;
   color: var(--white);
+  line-height: 1;
 }
 
 .stat-label {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--dim);
-  margin-top: 4px;
   font-weight: 300;
+  line-height: 1.5;
 }
 
 /* ── PLATFORM SECTION ── */
