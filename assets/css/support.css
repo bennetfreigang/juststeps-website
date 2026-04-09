@@ -53,7 +53,10 @@
 }
 
 .contact-bar-icon {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: var(--dim);
+  flex-shrink: 0;
 }
 
 .contact-bar p {
@@ -304,7 +307,9 @@
 }
 
 .info-card .ic-icon {
-  font-size: 28px;
+  display: flex;
+  align-items: center;
+  color: var(--accent);
   margin-bottom: 16px;
 }
 
@@ -390,7 +395,9 @@
 }
 
 .contact-card .cc-icon {
-  font-size: 28px;
+  display: flex;
+  align-items: center;
+  color: var(--accent);
 }
 
 .contact-card h4 {

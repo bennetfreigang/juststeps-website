@@ -340,6 +340,10 @@ h1 em {
   overflow: hidden;
 }
 
+.platform-grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .platform-card {
   background: var(--card);
   padding: 52px 48px;
@@ -409,7 +413,10 @@ h1 em {
 }
 
 .lock-icon {
-  font-size: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
 }
 
 .privacy-visual p {
@@ -448,10 +455,10 @@ h1 em {
 }
 
 .check {
-  color: #6ee38a;
-  font-size: 16px;
-  margin-top: 1px;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 /* ── CTA ── */
@@ -519,7 +526,8 @@ h1 em {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .platform-grid {
+  .platform-grid,
+  .platform-grid--three {
     grid-template-columns: 1fr;
   }
 
