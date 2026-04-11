@@ -255,39 +255,46 @@
         <div class="prose">
           <span class="updated">Last updated: April 2026</span>
 
-          <h3>Overview</h3>
-          <p>JustSteps ("the app") is designed with privacy as a core principle. We do not collect, transmit, or sell any personal data. All information stays on your device and in your personal iCloud account via Apple's HealthKit and SwiftData frameworks.</p>
+          <p>At JustSteps, we believe that your health data is your most personal information. Our privacy philosophy is simple: <strong>your data belongs to you, stays on your device, and is never seen by us.</strong></p>
 
-          <h3>Data we do not collect</h3>
+          <h3>1. Core Principles</h3>
           <ul>
-            <li>No account or registration is required</li>
-            <li>No personal information is collected or stored on external servers</li>
-            <li>No analytics or usage tracking SDKs are used</li>
-            <li>No crash reporting SDKs that transmit data externally</li>
-            <li>No advertising networks or tracking pixels</li>
+            <li><strong>Zero Data Collection:</strong> We do not collect, transmit, or store any of your personal information on our own servers.</li>
+            <li><strong>No Accounts:</strong> You can use JustSteps immediately without creating an account or providing an email address.</li>
+            <li><strong>No Tracking:</strong> We do not use any analytics, crash reporting, or usage tracking SDKs that send data to third parties.</li>
+            <li><strong>No Advertising:</strong> JustSteps is 100% ad-free and contains no tracking pixels or marketing scripts.</li>
           </ul>
 
-          <h3>Data stored on your device</h3>
-          <p>JustSteps stores step counts and walking distance locally using SwiftData. This data never leaves your device unless you explicitly back up your iPhone to iCloud, in which case it is covered by Apple's iCloud privacy practices.</p>
-          <p>Step data is also read from and written to Apple HealthKit. Your HealthKit data is governed by Apple's Health privacy policy. JustSteps only reads step count and walking distance; it does not write any data to HealthKit except to update today's step count for widget display purposes.</p>
+          <h3>2. HealthKit & Permissions</h3>
+          <p>To provide its core functionality, JustSteps requests permission to access specific data via Apple's HealthKit framework:</p>
+          <ul>
+            <li><strong>Step Count & Distance:</strong> We read this data to calculate your progress and display your history. JustSteps only writes data to HealthKit to ensure your daily progress is synchronized across your devices and reflected accurately in widgets.</li>
+            <li><strong>Motion & Fitness:</strong> This permission allows the app to use your iPhone's motion sensors (CoreMotion) for real-time step counting, ensuring the app feels responsive even before HealthKit updates.</li>
+          </ul>
+          <p>All HealthKit data is governed by Apple's Health privacy policy and remains under your full control within the iOS Health app.</p>
 
-          <h3>HealthKit</h3>
-          <p>JustSteps requests read access to Step Count and Walking + Running Distance from HealthKit. This data is used solely within the app to display your step count, distance, and history. It is not shared with any third party.</p>
+          <h3>3. Data Storage & Syncing</h3>
+          <p>JustSteps stores your daily goals and step history locally on your device using the SwiftData framework. This data is stored in your private iCloud container, which means:</p>
+          <ul>
+            <li>Your data is encrypted and synced between your own Apple devices (if iCloud is enabled).</li>
+            <li>We (the developers) have no access to this iCloud container.</li>
+            <li>Your data is included in your standard device backups.</li>
+          </ul>
 
-          <h3>Motion &amp; Fitness</h3>
-          <p>JustSteps uses CoreMotion to count steps directly from your iPhone's motion sensor. This requires Motion &amp; Fitness permission. The data is processed locally and not transmitted anywhere.</p>
+          <h3>4. Local Notifications</h3>
+          <p>JustSteps sends local push notifications to alert you when you reach your goal or to provide daily reminders. These notifications are scheduled and triggered entirely on your device. No external servers or "Push" services are used.</p>
 
-          <h3>Notifications</h3>
-          <p>JustSteps sends local push notifications for goal completion and daily reminders. These are generated entirely on-device and do not involve any external servers.</p>
+          <h3>5. Children's Privacy</h3>
+          <p>JustSteps does not knowingly collect any personal information from children. Since the app does not collect any data from any user, it is fully compliant with children's privacy regulations globally.</p>
 
-          <h3>Children's privacy</h3>
-          <p>JustSteps is suitable for all ages and does not knowingly collect personal data from children or any other users.</p>
+          <h3>6. Your Rights</h3>
+          <p>Since we do not store your data, you have full control over it. You can view, modify, or delete your health data at any time through the <strong>iOS Health App</strong> or by deleting JustSteps from your device.</p>
 
-          <h3>Changes to this policy</h3>
-          <p>If we ever change our privacy practices, this page will be updated and the "Last updated" date will change. We will never introduce data collection without explicit user consent.</p>
+          <h3>7. Changes to This Policy</h3>
+          <p>We may update this policy occasionally to reflect changes in the app. However, our commitment to "zero data collection" will never change. Any updates will be posted here with a revised "Last updated" date.</p>
 
           <h3>Contact</h3>
-          <p>Questions about this privacy policy? Email us at <a href="mailto:support.juststeps@gmail.com" style="color: var(--accent);">support.juststeps@gmail.com</a>.</p>
+          <p>If you have any questions regarding this privacy policy, please reach out to us at <a href="mailto:support.juststeps@gmail.com" style="color: var(--accent);">support.juststeps@gmail.com</a>.</p>
         </div>
       </section>
 
